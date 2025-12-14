@@ -21,7 +21,6 @@ public class DashboardPage {
     private final By configureWidgetTypeStepTwoLocator = By.xpath("//div[contains(@class, 'filtersList__filter-list')]//span[contains(@class, 'inputRadio__toggler')]");
     private final By widgetNameInputLocator = By.xpath("//input[@placeholder='Enter widget name']");
 
-    @SuppressWarnings("FieldCanBeLocal")
     private final String createdWidgetTitleLocatorTemplate = "//div[contains(@class, 'widgets-grid')]//div[text()='%s']";
 
     public DashboardPage(WebDriver driver) {
