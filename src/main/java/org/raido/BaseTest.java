@@ -25,8 +25,6 @@ public class BaseTest {
 
         driver = new ChromeDriver(options);
 
-        driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(5));
-
         driver.get("https://demo.reportportal.io");
 
         driver.manage().window().maximize();

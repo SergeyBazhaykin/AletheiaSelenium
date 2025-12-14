@@ -2,6 +2,7 @@ package org.raido.tests;
 
 import org.raido.BaseTest;
 import org.raido.pages.LoginPage;
+import org.raido.utils.TestDataProviders;
 
 import org.testng.annotations.Test;
 import org.testng.asserts.SoftAssert;
@@ -14,13 +15,11 @@ public class LoginNegativeTest extends BaseTest {
     @Story("Негативный тест на логин")
     @Owner("SergeyB")
     @Description("Попытка входа на сайт с некорректными данными")
-    @Test(description = "Негативный тест на логин")
-    public void loginNegative() {
+    @Test(description = "Негативный тест на логин",
+            dataProvider = "incorrectLoginData", dataProviderClass = TestDataProviders.class)
+    public void loginNegative(String wrongLogin, String wrongPassword) {
         SoftAssert softAssert = new SoftAssert();
         LoginPage loginPage = new LoginPage(driver);
-
-        String wrongLogin = "invalidUser";
-        String wrongPassword = "wrongPass";
 
         loginPage.login(wrongLogin, wrongPassword);
 
