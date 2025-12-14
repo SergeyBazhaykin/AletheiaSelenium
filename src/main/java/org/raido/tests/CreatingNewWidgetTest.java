@@ -5,6 +5,7 @@ import org.raido.pages.DashboardPage;
 import org.raido.pages.LaunchesPage;
 import org.raido.pages.LoginPage;
 
+import org.raido.utils.TestDataProviders;
 import org.testng.annotations.Test;
 import org.testng.asserts.SoftAssert;
 
@@ -16,15 +17,14 @@ public class CreatingNewWidgetTest extends BaseTest {
     @Story("Тест создания нового виджета")
     @Owner("SergeyB")
     @Description("Попытка авторизации и создания виджета со случайным именем")
-    @Test(description = "Тест создания нового виджета")
-    public void creatingNewWidget() {
+    @Test(description = "Тест создания нового виджета",
+            dataProvider = "correctLoginData", dataProviderClass = TestDataProviders.class)
+    public void creatingNewWidget(String correctLogin, String correctPassword) {
         SoftAssert softAssert = new SoftAssert();
         LoginPage loginPage = new LoginPage(driver);
         LaunchesPage launchesPage = new LaunchesPage(driver);
         DashboardPage dashboardPage = new DashboardPage(driver);
 
-        String correctLogin = "default";
-        String correctPassword = "1q2w3e";
         String widgetName = "testWidget" + System.currentTimeMillis();
 
         loginPage.login(correctLogin, correctPassword);
