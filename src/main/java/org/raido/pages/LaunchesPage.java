@@ -21,7 +21,7 @@ public class LaunchesPage {
     }
 
     @Step("Переход на страницу Dashboard")
-    public void clickDashboardPageButton(String login, String password) {
+    public void clickDashboardPageButton() {
         WaitUtils.waitForElementVisibility(driver, dashboardButtonLocator, waitTimeInSeconds);
         driver.findElement(dashboardButtonLocator).click();
     }

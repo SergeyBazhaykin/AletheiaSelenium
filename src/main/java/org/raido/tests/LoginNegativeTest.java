@@ -15,7 +15,7 @@ public class LoginNegativeTest extends BaseTest {
     @Owner("SergeyB")
     @Description("Попытка входа на сайт с некорректными данными")
     @Test(description = "Негативный тест на логин")
-    public void testLoginScenarios() {
+    public void loginNegative() {
         SoftAssert softAssert = new SoftAssert();
         LoginPage loginPage = new LoginPage(driver);
 

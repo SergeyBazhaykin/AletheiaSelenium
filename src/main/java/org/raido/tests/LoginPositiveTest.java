@@ -16,7 +16,7 @@ public class LoginPositiveTest extends BaseTest {
     @Owner("SergeyB")
     @Description("Попытка входа на сайт с корректными данными")
     @Test(description = "Позитивный тест на логин")
-    public void testLoginScenarios() {
+    public void loginPositive() {
         SoftAssert softAssert = new SoftAssert();
         LoginPage loginPage = new LoginPage(driver);
         LaunchesPage launchesPage = new LaunchesPage(driver);
