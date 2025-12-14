@@ -1,16 +1,16 @@
 # AletheiaSelenium
 Тестовое задание: автоматизация тестирования Report Portal
 
-Использование Selenium на Java с TestNG, отчетность в Allure.
+Проект выполнен на языке **Java**, с использованием **Selenium WebDriver**, фреймворка **TestNG** 
+и **Allure** для создания отчетности. Система сборки **maven**
 
 ## Запуск проекта
 
-maven clean test
+1. Сначала нужно убедиться что установлены **Java (JDK)** и **Maven**.
+2. Открыть командную строку в корневой папке проекта `AletheiaSelenium/`.
+3. Выполнить чистую сборку и запуск проекта `mvn clean install test`.
 
-//todo
+## Генерация отчета Allure
 
-## Генерация отчета
-
-allure:report allure:serve
-
-//todo
+1. Генерация отчета `mvn allure:report`.
+2. Открытие отчета в браузере по умолчанию `mvn allure:serve`.
