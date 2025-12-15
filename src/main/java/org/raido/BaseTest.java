@@ -1,33 +1,26 @@
 package org.raido;
 
 import org.openqa.selenium.WebDriver;
-import org.openqa.selenium.chrome.ChromeDriver;
-import org.openqa.selenium.chrome.ChromeOptions;
 import org.testng.ITestResult;
 import org.testng.annotations.AfterMethod;
 import org.testng.annotations.BeforeMethod;
-
-import java.util.HashMap;
-import java.util.Map;
+import org.testng.annotations.Parameters;
 
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
+import org.raido.utils.WebDriverFactory;
+
 public class BaseTest {
 
     private static final Logger log = LoggerFactory.getLogger(BaseTest.class);
-    protected static WebDriver driver;
+    protected WebDriver driver;
 
     @BeforeMethod
-    public void setup() {
-        log.info("--- Начинается выполнение нового теста. Настройка WebDriver. ---");
-        Map<String, Object> prefs = new HashMap<>();
-        prefs.put("profile.password_manager_leak_detection", false);
-        ChromeOptions options = new ChromeOptions();
-        options.setExperimentalOption("prefs", prefs);
-        options.addArguments("--disable-features=PasswordLeakDetection");
-
-        driver = new ChromeDriver(options);
+    @Parameters("browser")
+    public void setup(String browser) {
+        log.info("--- Начинается выполнение нового теста. Настройка WebDriver для: {} ---", browser);
+        driver = WebDriverFactory.createDriver(browser);
 
         driver.get("https://demo.reportportal.io");
         log.info("Открыт URL: https://demo.reportportal.io");

@@ -1,0 +1,31 @@
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd" >
+<suite name="Cross-Browser Test Suite" parallel="tests" thread-count="3">
+
+    <test name="Report Portal Tests - Chrome">
+        <parameter name="browser" value="chrome"/>
+        <classes>
+            <class name="org.raido.tests.LoginPositiveTest"/>
+            <class name="org.raido.tests.LoginNegativeTest"/>
+            <class name="org.raido.tests.CreatingNewWidgetTest"/>
+        </classes>
+    </test>
+
+    <test name="Report Portal Tests - Firefox">
+        <parameter name="browser" value="firefox"/>
+        <classes>
+            <class name="org.raido.tests.LoginPositiveTest"/>
+            <class name="org.raido.tests.LoginNegativeTest"/>
+            <class name="org.raido.tests.CreatingNewWidgetTest"/>
+        </classes>
+    </test>
+
+    <test name="Report Portal Tests - Edge">
+        <parameter name="browser" value="edge"/>
+        <classes>
+            <class name="org.raido.tests.LoginPositiveTest"/>
+            <class name="org.raido.tests.LoginNegativeTest"/>
+            <class name="org.raido.tests.CreatingNewWidgetTest"/>
+        </classes>
+    </test>
+
+</suite>
