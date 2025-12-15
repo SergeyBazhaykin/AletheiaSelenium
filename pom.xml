@@ -28,7 +28,7 @@
         <dependency>
             <groupId>org.seleniumhq.selenium</groupId>
             <artifactId>selenium-java</artifactId>
-            <version>4.38.0</version>
+            <version>4.39.0</version>
         </dependency>
         <dependency>
             <groupId>org.testng</groupId>
@@ -83,8 +83,11 @@
             <plugin>
                 <groupId>org.apache.maven.plugins</groupId>
                 <artifactId>maven-surefire-plugin</artifactId>
-                <version>3.5.2</version>
+                <version>3.5.4</version>
                 <configuration>
+                    <suiteXmlFiles>
+                        <suiteXmlFile>testng_crossbrowser.xml</suiteXmlFile>
+                    </suiteXmlFiles>
                     <testClassesDirectory>${project.build.directory}/classes</testClassesDirectory>
                     <argLine>
                         -javaagent:"${settings.localRepository}/org/aspectj/aspectjweaver/1.9.21/aspectjweaver-1.9.21.jar"
